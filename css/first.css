@@ -1,0 +1,109 @@
+body {
+	background-color: #e9ece5
+}
+header .fix_navi_bar{
+	display:flex;
+	align-items:center;
+	background-color: rgba(233,236,229,0.5);
+
+	
+}
+header nav{
+	display:flex;
+	justify-content:flex-end;
+}
+
+header h1{
+	padding: 20px;
+	color:#3b3a36;
+	font-family: "Josefin Slab";
+	font-weight: bold;
+}
+
+header p{
+	padding: 20px;
+	font-size: 24px;
+	color:#3b3a36;
+	font-family: "Josefin Slab";
+}
+
+.jumbotron{
+	margin-left:0px;
+	margin-right:0px;
+	background-image:url("http://images.freepicturesweb.com/img1/20/15/d/271.jpg");
+	background-size:cover;
+	color: #ffffff;
+  	height: 500px;
+
+}
+section p{
+	margin-left: 100px;
+	margin-top:50px;
+	height:100px;
+	width: 400px;
+	font-family: "Josefin Slab";
+
+	color:#e9ece5;
+}
+section .row_project{
+	margin: 20px;
+	display:flex;
+	flex-wrap:wrap;
+}
+section h2{
+	font-family: "Josefin Slab";
+	font-weight: bold;
+	color:#3b3a36;
+}
+.project{
+	margin-top: 80px;
+}
+section .row_project p{
+	color:#3b3a36;
+
+}
+section .row_project img{
+	display: flex;
+	margin-top: 20px;
+	width: 300px;
+	height: 200px;
+	align-items:center;
+}
+
+.container h2{
+	margin-top: 50px;
+	font-family: "Josefin Slab";
+	font-weight: bold;
+	color:#3b3a36;
+	margin-bottom: 40px
+}
+.container h3,p{
+	color:#ffffff;
+	font-weight: bold;
+	font-family: "Josefin Slab";
+}
+.carousel-inner{
+	height: 400px;
+	align-items:center;
+}
+.carousel-inner img{
+	display: block;
+    margin: 0 auto;
+}
+
+#journal_jumbo{
+	background-image:url("http://images.freepicturesweb.com/img1/05/02/35.jpg");
+	background-size:cover;
+	color: #ffffff;
+  	height: 500px;
+}
+
+footer p{
+	color:#3b3a36;
+	font-family: "Josefin Slab";
+
+}
+footer {
+  font-size: 12px;
+  padding: 20px 0;
+}
