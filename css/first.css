@@ -30,7 +30,7 @@ header p{
 .jumbotron{
 	margin-left:0px;
 	margin-right:0px;
-	background-image:url("http://images.freepicturesweb.com/img1/20/15/d/271.jpg");
+	background-image:url("http://i66.tinypic.com/id8091.jpg");
 	background-size:cover;
 	color: #ffffff;
   	height: 500px;
@@ -43,7 +43,7 @@ section p{
 	width: 400px;
 	font-family: "Josefin Slab";
 
-	color:#e9ece5;
+	color:#3b3a36;
 }
 section .row_project{
 	margin: 20px;
@@ -92,7 +92,7 @@ section .row_project img{
 }
 
 #journal_jumbo{
-	background-image:url("http://images.freepicturesweb.com/img1/05/02/35.jpg");
+	background-image:url("http://i63.tinypic.com/2isi734.jpg");
 	background-size:cover;
 	color: #ffffff;
   	height: 500px;
@@ -111,7 +111,6 @@ footer p{
 }
 footer {
 	margin-top: 50px;
-
   font-size: 12px;
   padding: 20px 0;
 }
