@@ -97,13 +97,21 @@ section .row_project img{
 	color: #ffffff;
   	height: 500px;
 }
-
+.contact ul {
+  list-style: none;
+}
+.contact li img {
+  width: 32px;
+  height: 32px;
+}
 footer p{
 	color:#3b3a36;
 	font-family: "Josefin Slab";
 
 }
 footer {
+	margin-top: 50px;
+
   font-size: 12px;
   padding: 20px 0;
 }
