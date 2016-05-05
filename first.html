@@ -8,6 +8,8 @@
     <title>Yanqi Liu's personal page</title>
 
     <!-- Bootstrap -->
+        <link href="css/clean-blog.min.css" rel="stylesheet">
+
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/first.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Josefin Slab">
@@ -25,7 +27,7 @@
   </head>
   <body>
     <a name="start">
-    <header class = "container">
+ <!--    <header class = "container">
     <div class = "fix_navi_bar">
         <h1 class = "col-md-4"> YANQI LIU </h1>
       <nav class = "col-md-8 text right">
@@ -35,7 +37,41 @@
         <a href = "#contact_page"><p> Contact </p></a>
       </nav>
     </div>
-    </header>
+    </header> -->
+        <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Yanqi Liu</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="first.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="#project_page">Work</a>
+                    </li>
+                    <li>
+                        <a href="#journal_page">Journal</a>
+                    </li>
+                    <li>
+                        <a href="#contact_page">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 
     <div class = "container">
     <section class="jumbotron">
@@ -66,7 +102,7 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <a href= # ><img src="img/segmentation.png" alt="Ground Segmentation" ></a>
+      <a href= "ground_seg.html" ><img src="img/segmentation.png" alt="Ground Segmentation" ></a>
       <div class="carousel-caption">
         <h3>Ground_segmentation</h3>
         <p>Utilizing a RGB camera on robotic car to detect drivable area</p>
@@ -74,7 +110,7 @@
     </div>
 
     <div class="item">
-      <a href= # ><img src="https://i.ytimg.com/vi/Ud8wbrRKPIU/hqdefault.jpg" alt="Chania"></a>
+      <a href= "virtual-reality.html"><img src="https://i.ytimg.com/vi/Ud8wbrRKPIU/hqdefault.jpg" alt="Chania"></a>
       <div class="carousel-caption">
         <h3>Hand Augmented Reality</h3> 
         <p>Visual Reality interacting with hand posture</p>
@@ -170,9 +206,9 @@
         </div>
       </section>
     </div> -->
+    <a name="journal_page">
 
   <div class = "container">
-    <a name="journal_page">
     <h2>JOURNAL</h2>
   <section id ="journal_jumbo" class="jumbotron">
     <div class = "container">
@@ -187,6 +223,7 @@
   </section>
 </div>
 
+<a name="contact_page">
 <div class = "container">
   <div class = "contact">
     <h2> CONTACT </h2>
@@ -202,7 +239,7 @@
     </div>
   </div>
 
-    <a name="contact_page">
+    
     <footer class="container">
         <div class="row">
          <p class="col-md-4">&copy: Yanqi Liu reserves the copy right for the website</p>
