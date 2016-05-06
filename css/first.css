@@ -72,14 +72,14 @@ section .row_project p{
 }
 section .row_project img{
 	display: flex;
-	margin-top: 50px;
+	margin-top: 20px;
 	width: 300px;
 	height: 200px;
 	align-items:center;
 }
 
 .container h2{
-	margin-top: 70px;
+	margin-top: 50px;
 	font-family: "Josefin Slab";
 	font-weight: bold;
 	color:#3b3a36;
