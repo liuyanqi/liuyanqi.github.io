@@ -1,10 +1,11 @@
-
-
-$(document).ready(function(){
+var main = function(){
 	$('a[href^="#"]').on('click',function (e) {
 	    e.preventDefault();
 
 	    var target = this.hash;
+	    if(target === "#myCarousel"){
+	    	target = "#project_page";
+	    }
 	    var $target = $(target);
 
 	    $('html, body').stop().animate({
@@ -13,4 +14,6 @@ $(document).ready(function(){
 	        window.location.hash = target;
 	    });
 	});
-});
+}
+
+$(document).ready(main);
