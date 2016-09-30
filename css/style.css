@@ -13,7 +13,7 @@
 }
 
 /* Clear floats by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
-
+/*
 .ri-grid ul:before,
 .ri-grid ul:after{
 	content: '';
@@ -25,7 +25,7 @@
 }
 
 .ri-grid ul {
-    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+    zoom: 1;
 } 
 
 .ri-grid ul li {
@@ -40,9 +40,9 @@
 	position: relative;
 	display: block;
 	overflow: hidden;
-}
+}*/
 
-.ri-grid ul li a{
+/*.ri-grid ul li a{
 	display: block;
 	outline: none;
 	position: absolute;
@@ -70,9 +70,9 @@
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
 }
-
+*/
 /* Grid wrapper sizes */
-.ri-grid-size-1{
+/*.ri-grid-size-1{
 	width: 55%;
 }
 .ri-grid-size-2{
@@ -83,49 +83,4 @@
 	margin-top: 0px;
 }
 
-/* Shadow style */
-.ri-shadow:after,
-.ri-shadow:before{
-	content: "";
-	position: absolute;
-	z-index: -2;
-	bottom: 15px;
-	left: 10px;
-	width: 50%;
-	height: 20%;
-	max-width: 300px;
-	max-height: 100px;
-	box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
-	-webkit-transform: rotate(-3deg);
-	-moz-transform: rotate(-3deg);
-	-ms-transform: rotate(-3deg);
-	-o-transform: rotate(-3deg);
-	transform: rotate(-3deg);
-}
-.ri-shadow:after{
-	right: 10px;
-	left: auto;
-	-webkit-transform: rotate(3deg);
-	-moz-transform: rotate(3deg);
-	-ms-transform: rotate(3deg);
-	-o-transform: rotate(3deg);
-	transform: rotate(3deg);
-}
-
-.ri-grid-loading:after,
-.ri-grid-loading:before{
-	display: none;
-}
-
-.ri-loading-image{
-	display: none;
-}
-
-.ri-grid-loading .ri-loading-image{
-	position: relative;
-	width: 30px;
-	height: 30px;
-	left: 50%;
-	margin: 100px 0 0 -15px;
-	display: block;
-}
+*/
