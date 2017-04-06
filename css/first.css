@@ -1,5 +1,6 @@
-body {
+html, body {
 	background-color: #e9ece5
+	height: 100%;
 }
 header .fix_navi_bar{
 	display:flex;
@@ -37,22 +38,27 @@ header p{
 .jumbotron{
 	margin-left:0px;
 	margin-right:0px;
-	margin-top: 80px;
-	background-image:url("../img/rsz_index_jumbo-1.jpg");
+	background-image:url("../img/jasmine_kerrytown-9.jpg");
 	background-size:cover;
 	color: #ffffff;
-  	height: 500px;
+  	width:100%;
+  	height:100%;
 
 }
 a {
   color:inherit;
   text-decoration: none;
  }
-section p{
-/*	margin-left: 100px;
-	margin-top:50px;
-	height:100px;
-	width: 400px;*/
+
+#self_intro{
+	vertical-align: middle;
+	margin-left: auto;
+    margin-right: auto;
+}
+#intro{
+
+	margin-top:100px;
+
 	font-family: "Josefin Slab";
 
 	color:#FFFFF0;
@@ -101,6 +107,16 @@ section .row_project img{
 .carousel-inner img{
 	display: block;
     margin: 0 auto;
+}
+
+#project_page{
+	width:100%;
+	height:100%;
+}
+
+#journal_page{
+	width:100%;
+	height:100%;
 }
 
 #journal_jumbo{
