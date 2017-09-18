@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Ground Segmentation using rgb camera</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Josefin Slab">
+
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Yanqi Liu</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="index.html#project_page">Work</a>
+                    </li>
+                    <li>
+                        <a href="index.html#journal_page">Journal</a>
+                    </li>
+                    <li>
+                        <a href="index.html#contact_page">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('img/resource/segmentation.png')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Ground segmentation using rgb camera</h1>
+                        <h2 class="subheading">Segmentation ground area using color pixels</h2>
+                        <span class="meta">Posted by <a href="#">Yanqi Liu</a> on August 24, 2015</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+                <p>In order to have a better understanding of how my program behave on ground detection, I've been taking a bunch of screen shots (350 images in total) from the log and manually colored the ground area and comparing those with the result run by my program. Different methods were tested and here are some explanations for the methods I am using.</p>
+
+                <h3 class="section-heading">Color detection</h3>
+                <p> set a small region at the bottom of the frame to construct the ground color model. Grow the neighboring pixels within the color range to get the ground area.</p>
+
+                <h3 class="section-heading">Image segmentation</h3>
+                 <p> use Felzenszwalb-Huttenlocher segmentation algorithm. cluster the image pixels with the similar property. I evaluate the color distribution difference between different cluster and merge the segmentation to represent the ground area.</p>
+
+                <h3 class="section-heading">Edge detection</h3>
+                <p>use sobel edge detector to detect the ground edges and connect the edges to represent the ground.</p>
+
+                <h3 class="section-heading">Illumination invariant</h3> 
+                <p>use to remove the shadow's interference.</p>
+
+                <!-- <p>For the outdoor environment</p>
+
+                <p>illumination invariant + color detection result:</p>
+                <p>                  True Positive   stdev     False positive  stdev    False negative     
+                </p>
+                <p>pedestrian:          92.809%       0.06          11.361%      0.12         7.190%</p>
+                <p>parking lot:        89.296%       0.04           6.771%       0.06        9.655%</p>
+                <p>grass:              85.113%        0.07           1.540%       0.15       14.886%</p>
+
+                <p>image segmentation method result:</p>
+                <p>             True Positive   stdev     False positive  stdev    False negative   </p>  
+                <p>pedestrian:    78.284%       0.17          5.209%        0.06       7.190%</p>
+                <p>parking lot:    5.209%         0.14          6.671%       0.02         9.655%</p>
+                <p>grass:           85.113%        0.14         1.540%         0.04     14.886%</p>
+
+                <p>For the indoor environment</p>
+
+                <p>Edge detection method:</p>
+                <p>            True Positive     stdev    False positive   stdev  False negative</p>
+                <p>Hall way:       97.277%         0.04         11.385%       0.08        2.722%</p>
+                <p>Lab:              92.488%          0.05        16.046%        0.10       7.512%</p>
+
+
+                <p>Comparing with color detection method:</p>
+                <p>               True Positive     stdev    False positive   stdev    False negative</p>
+                <p>Hall way:       77.862%         0.11         22.845%       0.21         2.722%</p>
+                <p>Lab:              92.488%          0.05        16.046%        0.007       7.512%</p>
+
+                <p>Comparing with the segmentation method:</p>
+                <p>             True Positive     stdev    False positive   stdev    False negative</p>
+                <p>Hall way:       90.035%         0.11         15.659%       0.16         9.964%</p>
+                <p>Lab:              82.856%         0.09         16.720%        0.09       17.143%</p>
+
+                <p>*For those who don't remember...</p>
+                <p>true positive: reality true, experiment true -- correct coverage</p>
+                <p> false positive: reality false, experiment true -- the actual not drivable area being detected as drivable</p>
+                <p> false negative:reality true, experiment false </p> -->
+                 
+                <p>From above, I conclude that the illumination invariant + color detection gives the best result for the outdoor environment and the edge detection method gives the best result for indoor environment.</p>
+
+                <p>One thing to pay attention to is the false positive rate that means the not drivable being detected as drivable. For the outdoor environment, the false positive rate can be caused by the grey color of the road and the white color of the pedestrian can be shown the same in illumination invariant image as fig.1. Furthermore, just a personal opinion, even if the robot is currently driving on the pedestrian, it does not mean that the road is not drivable.</p> 
+                 <a href="#">
+                        <img class="img-responsive" src="img/ii.jpg" alt="">
+                    </a>
+                    <span class="caption text-muted">Fig.1 left is the manually colored ground area and right is from the experiment result</span>
+                <p>For indoor environment, edge detection methods gives the best ground detection performance. I chose this method over the color detection method because in the hallway a lot of area have the similar color as the ground area(fig2). Using the method would help to reduce the misclassification of those areas(fig3).</p>
+                <a href="#">
+                        <img class="img-responsive" src="img/segmentation.jpg" alt="">
+                    </a>
+                    <span class="caption text-muted">Fig2. color detection and image segmentation fails to distinguish the ground area because of the similarity of the surrondings.</span>
+                <a href="#">
+                        <img class="img-responsive" src="img/edge_detection.jpg" alt="">
+                    </a>
+                    <span class="caption text-muted">​Fig3. problem solved by using the edge detection method</span>
+                <p>However, one limitation of the edge method is that in the environment when the ground area is in a more complicated shape(especially in the lab), the edges are less organized and some unnecessary area would be included. (fig.4) Another limitation is that when the environment is too dark, only few edges are being detected.(fig.5)</p>
+                <a href="#">
+                        <img class="img-responsive" src="img/indoor_complicated.jpg" alt="">
+                    </a>
+                    <span class="caption text-muted">​Fig4. edge detection failed due to the complicated shape
+</span>
+                <a href="#">
+                        <img class="img-responsive" src="img/too_dark.jpg" alt="">
+                    </a>
+                    <span class="caption text-muted">​​Fig5. edge detection failed due to the dark environment
+</span>
+                <p>In order to further analyze the false positive rate, I represent the frequency of false positive rate in the following chart and try to see if there are some extreme cases that increases the average value. (x-axis: false positive rate, y-axis: number of pics). We can see there does exist some outliers. For indoor hallway environment, when I remove the 9 pics  that have the false positive rate above 20%, I got the false positive rate drops from 11.385% to 9.302%. For outdoor pedestrian environment, after removing the 12 pics with false positive rate above 30%, I got the false positive rate drops from 11.361% to 8.40%.</p>
+                 <a href="#">
+                        <img class="img-responsive" src="img/char_outdoor.jpg" alt="">
+                    </a>
+                    <span class="caption text-muted">​​Fig6. outdoor statistic</span>
+                 <a href="#">
+                        <img class="img-responsive" src="img/chart_indoor.jpg" alt="">
+                    </a>
+                    <span class="caption text-muted">​​Fig7. indoor statistic</span>
+                <p>From my point of view, above 90% correct coverage is pretty good. I am not sure about how well I did with the false positive rate. For the outdoor environment, I can also lower the false positive rate below 10% by sacrificing some correct coverage rate.</p>
+
+                <p>Any ideas or comments?</p>
+
+                <p>~Jasmine</p>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Yanqi Liu Website 2016</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
